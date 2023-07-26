@@ -6,14 +6,29 @@ using System.Threading.Tasks;
 
 namespace RPG_Engine.Engine
 {
-    internal class Monster : LivingCreature
+    public class Monster : LivingCreature
     {
-        public int Id { get; set; }
+
+        public int ID { get; set; }
         public string Name { get; set; }
         public int MaximumDamage { get; set; }
         public int RewardExperiencePoints { get; set; }
         public int RewardGold { get; set; }
 
-       
+        public List<LootItem> LootTable { get; set; } = new List<LootItem>();
+
+        public Monster(int id, string name, int maximumDamage, int rewardExperiencePoints, int rewardGold, int currentHitPoints, int maximumHitPoints) :
+         base(currentHitPoints, maximumHitPoints)
+        {
+            ID = id;
+            Name = name;
+            MaximumDamage = maximumDamage;
+            RewardExperiencePoints = rewardExperiencePoints;
+            RewardGold = rewardGold;
+        }
+
+
+
+
     }
 }

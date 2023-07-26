@@ -47,13 +47,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Engine\HealingPotion.cs" />
+    <Compile Include="Engine\InventoryItem.cs" />
     <Compile Include="Engine\Item.cs" />
     <Compile Include="Engine\LivingCreature.cs" />
     <Compile Include="Engine\Location.cs" />
+    <Compile Include="Engine\LootItem.cs" />
     <Compile Include="Engine\Monster.cs" />
     <Compile Include="Engine\Player.cs" />
+    <Compile Include="Engine\PlayerQuest.cs" />
     <Compile Include="Engine\Quest.cs" />
+    <Compile Include="Engine\QuestCompletionItem.cs" />
     <Compile Include="Engine\Weapon.cs" />
+    <Compile Include="Engine\World.cs" />
     <Compile Include="SuperAdventure.cs">
       <SubType>Form</SubType>
     </Compile>
