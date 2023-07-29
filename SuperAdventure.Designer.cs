@@ -36,7 +36,6 @@
             this.lblGoldValue = new System.Windows.Forms.Label();
             this.lblExperienceValue = new System.Windows.Forms.Label();
             this.lblLevelValue = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cboWeapons = new System.Windows.Forms.ComboBox();
             this.cboPotions = new System.Windows.Forms.ComboBox();
@@ -66,7 +65,7 @@
             // lblGold
             // 
             this.lblGold.AutoSize = true;
-            this.lblGold.Location = new System.Drawing.Point(31, 70);
+            this.lblGold.Location = new System.Drawing.Point(31, 56);
             this.lblGold.Name = "lblGold";
             this.lblGold.Size = new System.Drawing.Size(35, 13);
             this.lblGold.TabIndex = 1;
@@ -75,7 +74,7 @@
             // lblExperience
             // 
             this.lblExperience.AutoSize = true;
-            this.lblExperience.Location = new System.Drawing.Point(31, 97);
+            this.lblExperience.Location = new System.Drawing.Point(31, 69);
             this.lblExperience.Name = "lblExperience";
             this.lblExperience.Size = new System.Drawing.Size(66, 13);
             this.lblExperience.TabIndex = 2;
@@ -84,7 +83,7 @@
             // lblLevel
             // 
             this.lblLevel.AutoSize = true;
-            this.lblLevel.Location = new System.Drawing.Point(31, 129);
+            this.lblLevel.Location = new System.Drawing.Point(31, 91);
             this.lblLevel.Name = "lblLevel";
             this.lblLevel.Size = new System.Drawing.Size(39, 13);
             this.lblLevel.TabIndex = 3;
@@ -101,7 +100,7 @@
             // lblGoldValue
             // 
             this.lblGoldValue.AutoSize = true;
-            this.lblGoldValue.Location = new System.Drawing.Point(103, 70);
+            this.lblGoldValue.Location = new System.Drawing.Point(103, 56);
             this.lblGoldValue.Name = "lblGoldValue";
             this.lblGoldValue.Size = new System.Drawing.Size(0, 13);
             this.lblGoldValue.TabIndex = 5;
@@ -109,7 +108,7 @@
             // lblExperienceValue
             // 
             this.lblExperienceValue.AutoSize = true;
-            this.lblExperienceValue.Location = new System.Drawing.Point(103, 97);
+            this.lblExperienceValue.Location = new System.Drawing.Point(103, 69);
             this.lblExperienceValue.Name = "lblExperienceValue";
             this.lblExperienceValue.Size = new System.Drawing.Size(0, 13);
             this.lblExperienceValue.TabIndex = 6;
@@ -117,24 +116,15 @@
             // lblLevelValue
             // 
             this.lblLevelValue.AutoSize = true;
-            this.lblLevelValue.Location = new System.Drawing.Point(103, 129);
+            this.lblLevelValue.Location = new System.Drawing.Point(103, 91);
             this.lblLevelValue.Name = "lblLevelValue";
             this.lblLevelValue.Size = new System.Drawing.Size(0, 13);
             this.lblLevelValue.TabIndex = 7;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(418, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Test";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(697, 337);
+            this.label1.Location = new System.Drawing.Point(697, 457);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 9;
@@ -143,7 +133,7 @@
             // cboWeapons
             // 
             this.cboWeapons.FormattingEnabled = true;
-            this.cboWeapons.Location = new System.Drawing.Point(557, 372);
+            this.cboWeapons.Location = new System.Drawing.Point(557, 492);
             this.cboWeapons.Name = "cboWeapons";
             this.cboWeapons.Size = new System.Drawing.Size(90, 21);
             this.cboWeapons.TabIndex = 10;
@@ -151,32 +141,34 @@
             // cboPotions
             // 
             this.cboPotions.FormattingEnabled = true;
-            this.cboPotions.Location = new System.Drawing.Point(557, 399);
+            this.cboPotions.Location = new System.Drawing.Point(557, 519);
             this.cboPotions.Name = "cboPotions";
             this.cboPotions.Size = new System.Drawing.Size(89, 21);
             this.cboPotions.TabIndex = 11;
             // 
             // btnUseWeapon
             // 
-            this.btnUseWeapon.Location = new System.Drawing.Point(692, 372);
+            this.btnUseWeapon.Location = new System.Drawing.Point(692, 492);
             this.btnUseWeapon.Name = "btnUseWeapon";
             this.btnUseWeapon.Size = new System.Drawing.Size(75, 23);
             this.btnUseWeapon.TabIndex = 12;
             this.btnUseWeapon.Text = "Use";
             this.btnUseWeapon.UseVisualStyleBackColor = true;
+            this.btnUseWeapon.Click += new System.EventHandler(this.btnUseWeapon_Click);
             // 
             // btnUsePotion
             // 
-            this.btnUsePotion.Location = new System.Drawing.Point(692, 401);
+            this.btnUsePotion.Location = new System.Drawing.Point(692, 521);
             this.btnUsePotion.Name = "btnUsePotion";
             this.btnUsePotion.Size = new System.Drawing.Size(75, 23);
             this.btnUsePotion.TabIndex = 13;
             this.btnUsePotion.Text = "Use";
             this.btnUsePotion.UseVisualStyleBackColor = true;
+            this.btnUsePotion.Click += new System.EventHandler(this.btnUsePotion_Click);
             // 
             // btnNorth
             // 
-            this.btnNorth.Location = new System.Drawing.Point(582, 213);
+            this.btnNorth.Location = new System.Drawing.Point(582, 333);
             this.btnNorth.Name = "btnNorth";
             this.btnNorth.Size = new System.Drawing.Size(75, 23);
             this.btnNorth.TabIndex = 14;
@@ -186,7 +178,7 @@
             // 
             // btnEast
             // 
-            this.btnEast.Location = new System.Drawing.Point(647, 257);
+            this.btnEast.Location = new System.Drawing.Point(647, 377);
             this.btnEast.Name = "btnEast";
             this.btnEast.Size = new System.Drawing.Size(75, 23);
             this.btnEast.TabIndex = 15;
@@ -196,7 +188,7 @@
             // 
             // btnSouth
             // 
-            this.btnSouth.Location = new System.Drawing.Point(582, 298);
+            this.btnSouth.Location = new System.Drawing.Point(582, 418);
             this.btnSouth.Name = "btnSouth";
             this.btnSouth.Size = new System.Drawing.Size(75, 23);
             this.btnSouth.TabIndex = 16;
@@ -206,7 +198,7 @@
             // 
             // btnWest
             // 
-            this.btnWest.Location = new System.Drawing.Point(504, 257);
+            this.btnWest.Location = new System.Drawing.Point(504, 377);
             this.btnWest.Name = "btnWest";
             this.btnWest.Size = new System.Drawing.Size(75, 23);
             this.btnWest.TabIndex = 17;
@@ -219,18 +211,19 @@
             this.rtbLocation.Location = new System.Drawing.Point(479, 12);
             this.rtbLocation.Name = "rtbLocation";
             this.rtbLocation.ReadOnly = true;
-            this.rtbLocation.Size = new System.Drawing.Size(309, 71);
+            this.rtbLocation.Size = new System.Drawing.Size(309, 105);
             this.rtbLocation.TabIndex = 18;
             this.rtbLocation.Text = "";
             // 
             // rtbMessages
             // 
-            this.rtbMessages.Location = new System.Drawing.Point(479, 89);
+            this.rtbMessages.Location = new System.Drawing.Point(479, 145);
             this.rtbMessages.Name = "rtbMessages";
             this.rtbMessages.ReadOnly = true;
-            this.rtbMessages.Size = new System.Drawing.Size(309, 65);
+            this.rtbMessages.Size = new System.Drawing.Size(309, 138);
             this.rtbMessages.TabIndex = 19;
             this.rtbMessages.Text = "";
+            this.rtbMessages.TextChanged += new System.EventHandler(this.rtbMessages_TextChanged);
             // 
             // dgvInventory
             // 
@@ -245,7 +238,7 @@
             this.dgvInventory.Name = "dgvInventory";
             this.dgvInventory.ReadOnly = true;
             this.dgvInventory.RowHeadersVisible = false;
-            this.dgvInventory.Size = new System.Drawing.Size(240, 150);
+            this.dgvInventory.Size = new System.Drawing.Size(347, 150);
             this.dgvInventory.TabIndex = 20;
             // 
             // dgvQuest
@@ -260,14 +253,14 @@
             this.dgvQuest.Name = "dgvQuest";
             this.dgvQuest.ReadOnly = true;
             this.dgvQuest.RowHeadersVisible = false;
-            this.dgvQuest.Size = new System.Drawing.Size(240, 126);
+            this.dgvQuest.Size = new System.Drawing.Size(347, 126);
             this.dgvQuest.TabIndex = 21;
             // 
             // SuperAdventure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 660);
             this.Controls.Add(this.dgvQuest);
             this.Controls.Add(this.dgvInventory);
             this.Controls.Add(this.rtbMessages);
@@ -281,7 +274,6 @@
             this.Controls.Add(this.cboPotions);
             this.Controls.Add(this.cboWeapons);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblLevelValue);
             this.Controls.Add(this.lblExperienceValue);
             this.Controls.Add(this.lblGoldValue);
@@ -310,7 +302,6 @@
         private System.Windows.Forms.Label lblGoldValue;
         private System.Windows.Forms.Label lblExperienceValue;
         private System.Windows.Forms.Label lblLevelValue;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboWeapons;
         private System.Windows.Forms.ComboBox cboPotions;

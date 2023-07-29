@@ -11,16 +11,19 @@ namespace RPG_Engine.Engine
     {
         public int Gold { get; set; }
         public int ExperiencePoints { get; set; }
-        public int Level { get; set; }
+        public int Level
+        {
+            get { return ((ExperiencePoints / 100) + 1); }
+        }
         public Location CurrentLocation { get; set; }
         public List<InventoryItem> Inventory { get; set; }
         public List<PlayerQuest> Quests { get; set; }
 
-        public Player(int currentHitPoints, int maximumHitPoints, int gold, int experiencePoints, int level) : base(currentHitPoints, maximumHitPoints)
+        public Player(int currentHitPoints, int maximumHitPoints, int gold, int experiencePoints) : base(currentHitPoints, maximumHitPoints)
         {
             Gold = gold;
             ExperiencePoints = experiencePoints;
-            Level = level;
+
 
             Inventory = new List<InventoryItem>();
             Quests = new List<PlayerQuest>();
@@ -33,32 +36,14 @@ namespace RPG_Engine.Engine
                 // There is no required item for this location, so return "true"
                 return true;
             }
-
             // See if the player has the required item in their inventory
-            foreach (InventoryItem ii in Inventory)
-            {
-                if (ii.Details.ID == location.ItemRequiredToEnter.ID)
-                {
-                    // We found the required item, so return "true"
-                    return true;
-                }
-            }
+            return Inventory.Exists(ii => ii.Details.ID == location.ItemRequiredToEnter.ID);
 
-            // We didn't find the required item in their inventory, so return "false"
-            return false;
         }
 
         public bool HasThisQuest(Quest quest)
         {
-            foreach (PlayerQuest playerQuest in Quests)
-            {
-                if (playerQuest.Details.ID == quest.ID)
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            return Quests.Exists(pq => pq.Details.ID == quest.ID);
         }
 
         public bool CompletedThisQuest(Quest quest)
@@ -79,29 +64,10 @@ namespace RPG_Engine.Engine
             // See if the player has all the items needed to complete the quest here
             foreach (QuestCompletionItem qci in quest.QuestCompletionItems)
             {
-                bool foundItemInPlayersInventory = false;
-
                 // Check each item in the player's inventory, to see if they have it, and enough of it
-                foreach (InventoryItem ii in Inventory)
-                {
-                    if (ii.Details.ID == qci.Details.ID) // The player has the item in their inventory
-                    {
-                        foundItemInPlayersInventory = true;
-
-                        if (ii.Quantity < qci.Quantity) // The player does not have enough of this item to complete the quest
-                        {
-                            return false;
-                        }
-                    }
-                }
-
-                // The player does not have any of this quest completion item in their inventory
-                if (!foundItemInPlayersInventory)
-                {
+                if (!Inventory.Exists(ii => ii.Details.ID == qci.Details.ID && ii.Quantity >= qci.Quantity))
                     return false;
-                }
             }
-
             // If we got here, then the player must have all the required items, and enough of them, to complete the quest.
             return true;
         }
